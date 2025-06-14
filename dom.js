@@ -65,4 +65,30 @@ pclick.addEventListener("click", (e) => {
 //END DOM EVENT
 
 //DOM NAVIGATION
+const parent = document.querySelector(".divcon"); // truy cập phần tử cha
+console.log(parent.parentNode)
+const chill = document.querySelector(".divcha");
+console.log(chill.childNodes); // trả về node list các phần tử con của thẻ
+console.log(chill.nodeName) // trả về tên của thẻ (node);
+console.log(chill.firstElementChild); // trả về phần tử đầu tiên
+console.log(chill.lastElementChild) // trả về phần tử cuối cùng;
+console.log(chill.nextElementSibling) // trả về node kế tiếp;
 
+//END DOM NAVIGATION
+
+//DOM NODE
+
+var thep = document.createElement("p");// tạo thẻ p
+document.body.appendChild(thep);// thêm thẻ p vào trong body dưới cùng (nếu không có dòng này thì thẻ p ko đc hiển thị)
+thep.innerHTML = "thẻ p mới tạo bằng js";// thêm thông tin
+
+var text = document.createTextNode("Hello đây không phải là thẻ html"); // tạo chuỗi không phải thẻ
+document.body.appendChild(text);
+
+
+var theh = document.createElement("h1");
+document.querySelector(".chaudiv").appendChild(theh).innerHTML = "con của thẻ p và là cháu của divcon";
+// muốn xoá thì dùng removeChild(node_remove) tương tự appenchild
+// const thepcondivcon = document.querySelector(".chaudiv");
+// const p = document.createElement("p");
+// document.querySelector(".divcon").replaceChild(p, thepcondivcon)
